@@ -6,6 +6,8 @@ import Link from "next/link";
 import { ComponentType, SVGProps } from "react";
 import { PayleBeneficiosClosingCta, PayleBeneficiosHero, PayleBeneficiosSections } from "./PayleBeneficiosPage";
 import { PayleContactSection } from "./PayleContactSection";
+import { PayleInnerMarketingPage, type InnerMarketingPageKey } from "./PayleInnerMarketingPages";
+import { PayleOperacaoClosingCta, PayleOperacaoHero, PayleOperacaoMainSections } from "./PayleOperacaoPage";
 import { PayleProdutoClosingCta, PayleProdutoHero, PayleProdutoMainSections } from "./PayleProdutoPage";
 import { PayleSiteHeader } from "./PayleSiteHeader";
 import { PAYLE_CONTATO_HREF, PAYLE_FLUXO_HREF } from "./payleSiteNav";
@@ -58,7 +60,7 @@ const pageContent: Record<
     ]
   },
   operacao: {
-    eyebrow: "Operação",
+    eyebrow: "Operações",
     title: "Mais clareza para acompanhar sua operação todos os dias.",
     body: "Acompanhe pedidos, pagamentos aprovados, eventos enviados e recuperação de carrinho sem depender de conversas soltas ou planilhas paralelas.",
     image: "/payle-team-operation.png",
@@ -147,19 +149,6 @@ const pageContent: Record<
   }
 };
 
-const planCards = [
-  ["Essencial", "Para começar", "Checkout personalizado, status de pagamento e integrações principais para organizar a base."],
-  ["Operação", "Mais vendido", "Recuperação, eventos rastreados, dashboard e contexto para suporte acompanhar a venda."],
-  ["Escala", "Sob medida", "Fluxos personalizados, múltiplas lojas e acompanhamento dedicado para alto volume."]
-];
-
-const faqItems = [
-  ["A Payle substitui minha loja?", "Não. Ela entra para organizar a experiência de checkout, status, eventos e acompanhamento ao redor da estrutura que você já usa."],
-  ["Consigo usar com Pix, cartão e boleto?", "Sim. A disponibilidade depende das integrações e gateways conectados, mas o objetivo é deixar esses meios claros no fluxo."],
-  ["A equipe comercial consegue acompanhar?", "Sim. A Payle foi pensada para dar contexto: pedido, pagamento, recuperação, evento e entrega em uma leitura mais humana."],
-  ["Preciso de implantação complexa?", "O escopo depende da operação, mas o desenho é feito para encaixar sem quebrar sua rotina atual."]
-];
-
 const flowSteps = [
   ["Produto", "Oferta clara e dados da compra preparados para o checkout.", IconWallet],
   ["Checkout", "Tela mobile e objetiva para o cliente concluir sem esforço.", IconPanel],
@@ -167,6 +156,16 @@ const flowSteps = [
   ["Aprovação", "Pedido aprovado e equipe avisada no momento certo.", IconCheck],
   ["Entrega", "Acesso, produto ou próximo passo liberado com menos fricção.", IconBolt]
 ] satisfies [string, string, SvgIcon][];
+
+const innerMarketingPages: Record<InnerMarketingPageKey, true> = {
+  recursos: true,
+  planos: true,
+  duvidas: true
+};
+
+function isInnerMarketingPage(page: PageKey): page is InnerMarketingPageKey {
+  return page in innerMarketingPages;
+}
 
 export function PayleSubPage({ page }: { page: PageKey }) {
   const reduce = useReducedMotion();
@@ -191,6 +190,14 @@ export function PayleSubPage({ page }: { page: PageKey }) {
             <PayleBeneficiosSections viewport={viewport} />
             <PayleBeneficiosClosingCta />
           </>
+        ) : page === "operacao" ? (
+          <>
+            <PayleOperacaoHero ease={ease} />
+            <PayleOperacaoMainSections viewport={viewport} />
+            <PayleOperacaoClosingCta />
+          </>
+        ) : isInnerMarketingPage(page) ? (
+          <PayleInnerMarketingPage page={page} ease={ease} viewport={viewport} />
         ) : (
           <>
         <section className="relative overflow-hidden bg-slate-950 text-white">
@@ -244,29 +251,7 @@ export function PayleSubPage({ page }: { page: PageKey }) {
         <section className="relative overflow-hidden bg-white py-20">
           <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-100/70 blur-3xl" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {page === "planos" ? (
-              <div className="grid gap-5 lg:grid-cols-3">
-                {planCards.map(([name, tag, text], index) => (
-                  <article key={name} className={`rounded-3xl border p-6 shadow-[0_20px_70px_rgba(15,23,42,0.08)] ${index === 1 ? "border-blue-200 bg-blue-50/80 ring-4 ring-blue-50" : "border-slate-200 bg-white"}`}>
-                    <p className="text-sm font-semibold text-blue-600">{tag}</p>
-                    <h2 className="mt-3 text-2xl font-semibold text-slate-950">{name}</h2>
-                    <p className="mt-4 text-sm leading-7 text-slate-600">{text}</p>
-                    <Link href={PAYLE_CONTATO_HREF} className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
-                      Falar sobre plano
-                    </Link>
-                  </article>
-                ))}
-              </div>
-            ) : page === "duvidas" ? (
-              <div className="grid gap-4 lg:grid-cols-2">
-                {faqItems.map(([question, answer]) => (
-                  <article key={question} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)]">
-                    <h2 className="text-lg font-semibold text-slate-950">{question}</h2>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">{answer}</p>
-                  </article>
-                ))}
-              </div>
-            ) : page === "fluxo" ? (
+            {page === "fluxo" ? (
               <div className="grid gap-4 lg:grid-cols-5">
                 {flowSteps.map(([title, body, Icon], index) => (
                   <article key={title} className="relative rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)]">

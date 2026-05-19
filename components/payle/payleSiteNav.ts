@@ -4,6 +4,10 @@ export const PAYLE_HOME_HREF = "/inicio";
 export const payleMainNav = [
   { href: "/produto", label: "Produto" },
   { href: "/beneficios", label: "Beneficios" },
+  { href: "/operacao", label: "Operações" },
+  { href: "/recursos", label: "Recursos" },
+  { href: "/planos", label: "Planos" },
+  { href: "/duvidas", label: "Duvidas" },
   { href: "/integracoes", label: "Integracoes" },
   { href: "/checkout", label: "Checkout" },
   { href: "/contato", label: "Contato" }

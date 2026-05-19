@@ -40,7 +40,7 @@ const benefits: { eyebrow: string; title: string; body: string; stat: string; Ic
     Icon: IconPanel
   },
   {
-    eyebrow: "Operacao",
+    eyebrow: "Operações",
     title: "Menos tempo resolvendo checkout",
     body: "Gateways, pedidos e eventos aparecem no mesmo lugar. Sua equipe perde menos tempo procurando resposta.",
     stat: "rotina organizada",
@@ -69,7 +69,7 @@ const benefits: { eyebrow: string; title: string; body: string; stat: string; Ic
   },
   {
     eyebrow: "Crescimento",
-    title: "Uma operacao mais tranquila para crescer",
+    title: "Uma operação mais tranquila para crescer",
     body: "Loja, infoproduto ou agencia: a Payle ajuda a manter a base organizada enquanto o volume aumenta.",
     stat: "crescimento saudavel",
     Icon: IconLayers
@@ -101,7 +101,7 @@ const flow = [
   { step: "01", title: "Produto", body: "Oferta clara, dados da compra e origem do pedido.", Icon: IconWallet },
   { step: "02", title: "Checkout", body: "Tela responsiva com identidade da sua marca.", Icon: IconPanel },
   { step: "03", title: "Pagamento", body: "Pix, cartao ou boleto em uma jornada simples.", Icon: IconCardLock },
-  { step: "04", title: "Aprovacao", body: "Status visivel para cliente e operacao.", Icon: IconCheck },
+  { step: "04", title: "Aprovacao", body: "Status visivel para cliente e operação.", Icon: IconCheck },
   { step: "05", title: "Entrega", body: "Pedido, acesso ou arquivo liberado com menos friccao.", Icon: IconBolt }
 ];
 
@@ -130,7 +130,7 @@ const testimonials = [
   {
     quote: "A maior mudanca foi parar de apagar incendio no checkout. Agora a equipe sabe o que aconteceu em cada pedido.",
     name: "Camila R.",
-    role: "Operacao de e-commerce"
+    role: "Operação de e-commerce"
   },
   {
     quote: "O cliente entende o pagamento e a gente acompanha os eventos sem depender de varias abas abertas.",
@@ -211,7 +211,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
             <motion.div initial={{ opacity: 0, y: reduce ? 0 : 24, scale: reduce ? 1 : 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ ...ease, delay: reduce ? 0 : 0.12 }} className="relative">
               <div className="absolute -left-6 top-6 z-10 hidden w-48 overflow-hidden rounded-2xl border border-white/15 bg-white/[0.12] text-white shadow-[0_20px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl lg:block">
                 <div className="relative h-20">
-                  <Image src="/payle-team-operation.png" alt="Equipe acompanhando pedidos em uma operacao de e-commerce" fill sizes="192px" className="object-cover" />
+                  <Image src="/payle-team-operation.png" alt="Equipe acompanhando pedidos em uma operação de e-commerce" fill sizes="192px" className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
                 </div>
                 <div className="p-2.5">
@@ -240,7 +240,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/35 to-transparent" />
                     <div className="absolute left-3 top-3 max-w-[14rem]">
-                      <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-blue-100">Operacao acontecendo</p>
+                      <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-blue-100">Operação acontecendo</p>
                       <h2 className="mt-1 text-base font-semibold leading-snug text-white sm:text-lg">Vendas, equipe e checkout no mesmo ritmo.</h2>
                     </div>
                     <div className="absolute bottom-2.5 left-3 right-3 flex flex-wrap gap-1.5">
@@ -265,7 +265,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                     <div className="border-b border-white/10 bg-slate-950/70 p-3 lg:border-b-0 lg:border-r">
                       <div className="flex items-start justify-between gap-2">
                         <div>
-                          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-slate-500">Visao da operacao</p>
+                          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-slate-500">Visão da operação</p>
                           <h2 className="mt-1 text-lg font-semibold text-white">Pagamentos em movimento</h2>
                         </div>
                         <span className="rounded-xl bg-emerald-400/10 p-2 text-emerald-300">
@@ -370,7 +370,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-950/30 to-transparent" />
               </div>
               <div className="bg-[radial-gradient(circle_at_100%_0%,rgba(59,130,246,0.25),transparent_28%)] p-8 text-white">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">Operacao real</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">Operação real</p>
                 <h3 className="mt-3 text-2xl font-semibold">Uma manha mais tranquila para acompanhar vendas.</h3>
                 <p className="mt-4 leading-7 text-slate-300">
                   Pedidos aprovados, carrinhos retomados e entregas liberadas aparecem como sinais simples. Ninguem precisa ficar perguntando em varios canais se a venda deu certo.
@@ -431,7 +431,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/20 bg-white/[0.16] p-4 text-white shadow-[0_20px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl">
-                  <p className="text-sm font-semibold">Uma operacao mais tranquila para sua equipe.</p>
+                  <p className="text-sm font-semibold">Uma operação mais tranquila para sua equipe.</p>
                   <p className="mt-1 text-xs text-blue-100">Menos tempo resolvendo checkout. Mais contexto para atender melhor.</p>
                 </div>
               </div>
@@ -447,7 +447,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                   {[
                     ["Pedido aprovado", "status claro para a equipe"],
                     ["Cliente atualizado", "menos chamados repetidos"],
-                    ["Gateway conectado", "operacao sem troca radical"],
+                    ["Gateway conectado", "operação sem troca radical"],
                     ["Entrega liberada", "fluxo finalizado com seguranca"]
                   ].map(([label, body]) => (
                     <div key={label} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
@@ -513,7 +513,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                     ))}
                   </div>
                   <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/20 bg-white/[0.14] p-5 text-white shadow-[0_24px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-100">Operacao real</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-100">Operação real</p>
                     <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
                       Existem pessoas acompanhando cada pedido.
                     </h2>
@@ -584,7 +584,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                         <span className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold">C</span>
                         <div>
                           <p className="font-semibold">Camila R.</p>
-                          <p className="text-xs text-slate-400">Operacao de e-commerce</p>
+                          <p className="text-xs text-slate-400">Operação de e-commerce</p>
                         </div>
                       </div>
                       <p className="mt-4 text-sm leading-7 text-slate-200">
@@ -721,7 +721,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                   Cliente compra, Payle organiza, equipe acompanha.
                 </h3>
                 <p className="mt-4 max-w-xl leading-8 text-slate-300">
-                  Do celular do cliente ao painel da operacao, cada etapa ganha um status simples. Menos ansiedade para quem compra, menos retrabalho para quem atende.
+                  Do celular do cliente ao painel da operação, cada etapa ganha um status simples. Menos ansiedade para quem compra, menos retrabalho para quem atende.
                 </p>
                 <div className="mt-8 space-y-3">
                   {[
