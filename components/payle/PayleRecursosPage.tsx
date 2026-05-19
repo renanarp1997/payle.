@@ -412,13 +412,13 @@ function EcosystemConnected({
           </p>
         </motion.div>
 
-        <motion.div className="relative mt-12 overflow-x-auto pb-4" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={{ ...ease, delay: 0.06 }}>
+        <div className="payle-h-scroll relative mt-12">
           <motion.div
             className="pointer-events-none absolute left-6 right-6 top-[4.25rem] hidden h-px bg-gradient-to-r from-blue-500/30 via-emerald-400/50 to-violet-400/30 lg:block"
             animate={reduce ? undefined : { opacity: [0.4, 0.9, 0.4] }}
             transition={reduce ? undefined : { duration: 3, repeat: Infinity }}
           />
-          <div className="flex min-w-[52rem] gap-3 lg:min-w-0 lg:grid lg:grid-cols-7 lg:gap-2">
+          <motion.div className="flex gap-3 lg:grid lg:grid-cols-7 lg:gap-2" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={{ ...ease, delay: 0.06 }}>
             {ecosystemFlow.map((step, i) => (
               <motion.article
                 key={step.id}
@@ -426,7 +426,7 @@ function EcosystemConnected({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={viewport}
                 transition={{ ...ease, delay: i * 0.05 }}
-                className="relative flex-1 rounded-2xl border border-white/10 bg-white/[0.05] p-4 shadow-[0_16px_48px_rgba(0,0,0,0.2)] ring-1 ring-white/8"
+                className="payle-h-scroll-item relative flex-1 rounded-2xl border border-white/10 bg-white/[0.05] p-4 shadow-[0_16px_48px_rgba(0,0,0,0.2)] ring-1 ring-white/8 lg:w-auto"
               >
                 {i < ecosystemFlow.length - 1 && (
                   <motion.div
@@ -441,8 +441,8 @@ function EcosystemConnected({
                 <p className="mt-1.5 text-xs leading-5 text-slate-400">{step.detail}</p>
               </motion.article>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         <motion.div className="mt-8 flex flex-wrap justify-center gap-2" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={viewport} transition={{ ...ease, delay: 0.15 }}>
           {ecosystemStatuses.map((s) => (

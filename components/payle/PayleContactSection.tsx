@@ -12,7 +12,7 @@ export function PayleContactSection() {
   return (
     <section
       id="contato"
-      className="relative overflow-hidden bg-[#f8fbff] px-4 py-24 sm:px-6 lg:px-8"
+      className="relative overflow-hidden bg-[#f8fbff] px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.08),transparent_32%),linear-gradient(rgba(37,99,235,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.045)_1px,transparent_1px)] bg-[length:100%_100%,28px_28px,28px_28px]" />
       <div className="pointer-events-none absolute -left-10 bottom-24 h-48 w-48 rounded-full border border-blue-200/80" />
@@ -26,13 +26,13 @@ export function PayleContactSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewport}
         transition={ease}
-        className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.96fr_1fr] lg:items-center"
+        className="relative mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[0.96fr_1fr] lg:items-center lg:gap-12"
       >
         <div>
           <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-200 bg-white text-blue-600 shadow-[0_14px_34px_rgba(37,99,235,0.12)]">
             <IconMail className="h-7 w-7" />
           </div>
-          <h2 className="mt-7 max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-4xl">
+          <h2 className="text-balance mt-6 max-w-full text-2xl font-semibold leading-tight tracking-tight text-slate-950 sm:mt-7 sm:max-w-2xl sm:text-3xl md:text-4xl">
             Validar o checkout com a identidade da sua marca?
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
@@ -54,7 +54,7 @@ export function PayleContactSection() {
             />
             <button
               type="submit"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-blue-600 px-8 text-sm font-semibold text-white shadow-[0_18px_36px_rgba(37,99,235,0.28)] transition hover:bg-blue-700 sm:col-span-1"
+              className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-6 text-sm font-semibold text-white shadow-[0_18px_36px_rgba(37,99,235,0.28)] transition hover:bg-blue-700 sm:col-span-1 sm:w-auto sm:px-8"
             >
               Conversar no WhatsApp
               <IconArrowRight className="h-4 w-4" />

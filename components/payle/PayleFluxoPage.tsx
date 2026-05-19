@@ -258,15 +258,9 @@ function FullFlowVisual({
           </p>
         </motion.div>
 
-        <motion.div
-          className="relative mt-12 overflow-x-auto pb-4"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewport}
-          transition={{ ...ease, delay: 0.06 }}
-        >
+        <div className="payle-h-scroll relative mt-12">
           <motion.div className="pointer-events-none absolute left-8 right-8 top-[4.5rem] hidden h-px bg-gradient-to-r from-blue-500/40 via-emerald-400/50 to-blue-500/40 lg:block" />
-          <motion.div className="flex min-w-[56rem] gap-3 lg:min-w-0 lg:grid lg:grid-cols-6 lg:gap-4">
+          <motion.div className="flex gap-3 lg:grid lg:grid-cols-6 lg:gap-4" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={{ ...ease, delay: 0.06 }}>
             {fullFlow.map((step, i) => (
               <motion.article
                 key={step.title}
@@ -274,7 +268,7 @@ function FullFlowVisual({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={viewport}
                 transition={{ ...ease, delay: i * 0.05 }}
-                className="relative flex-1 rounded-2xl border border-white/10 bg-white/[0.06] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.25)] ring-1 ring-white/10 backdrop-blur-sm"
+                className="payle-h-scroll-item relative flex-1 rounded-2xl border border-white/10 bg-white/[0.06] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.25)] ring-1 ring-white/10 backdrop-blur-sm lg:w-auto"
               >
                 {i < fullFlow.length - 1 && (
                   <motion.div
@@ -296,7 +290,7 @@ function FullFlowVisual({
               </motion.article>
             ))}
           </motion.div>
-        </motion.div>
+        </div>
 
         <motion.div
           className="mt-8 flex flex-wrap justify-center gap-2"
@@ -511,9 +505,9 @@ function OperationTimeline({ viewport, ease, reduce }: { viewport: { once: boole
           <p className="mt-3 text-base text-slate-600">Da entrada do cliente ao pós-venda — tudo conectado.</p>
         </motion.div>
 
-        <motion.div className="relative mt-12 overflow-x-auto pb-2" initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={{ ...ease, delay: 0.06 }}>
+        <motion.div className="payle-h-scroll relative mt-12" initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={{ ...ease, delay: 0.06 }}>
           <motion.div className="pointer-events-none absolute left-0 right-0 top-5 hidden h-px bg-gradient-to-r from-blue-200 via-emerald-300 to-blue-200 md:block" />
-          <motion.div className="flex min-w-[48rem] gap-2 md:min-w-0 md:grid md:grid-cols-8 md:gap-1">
+          <motion.div className="flex gap-2 md:grid md:grid-cols-8 md:gap-1">
             {operationTimeline.map((step, i) => (
               <motion.div
                 key={step}

@@ -2,11 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   background: #030303;
   color: #f8fafc;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .payle-section-y {
+    @apply py-14 sm:py-16 md:py-20;
+  }
+
+  .payle-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .payle-cta {
+    @apply inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold sm:min-h-0 sm:w-auto sm:px-6 sm:py-3.5;
+  }
+
+  .payle-h-scroll {
+    @apply -mx-4 overflow-x-auto overscroll-x-contain px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden;
+  }
+
+  .payle-h-scroll-item {
+    @apply w-[min(17.5rem,82vw)] shrink-0 snap-center lg:w-auto lg:shrink lg:snap-align-none;
+  }
 }
 
 * {

@@ -167,48 +167,48 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
   };
 
   return (
-    <div className="min-h-screen overflow-hidden bg-white text-slate-950">
+    <div className="min-h-screen overflow-x-hidden bg-white text-slate-950">
       <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.13),transparent_34%),linear-gradient(rgba(37,99,235,0.026)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.026)_1px,transparent_1px)] bg-[length:100%_100%,88px_88px,88px_88px]" />
 
       <PayleSiteHeader />
 
-      <main className="relative z-10">
+      <main className="relative z-10 w-full max-w-[100vw] overflow-x-hidden">
         <section className="relative overflow-hidden bg-slate-950">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(59,130,246,0.32),transparent_28%),radial-gradient(circle_at_18%_80%,rgba(16,185,129,0.16),transparent_26%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.055)_1px,transparent_1px)] bg-[length:76px_76px] opacity-35" />
 
-          <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-14 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-10 lg:px-8 lg:pb-14 lg:pt-12">
-            <motion.div variants={container} initial="hidden" animate="show">
-              <motion.div variants={fadeUp} className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.10] px-3 py-1.5 text-xs font-semibold text-blue-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur">
-                <IconSpark className="h-4 w-4 text-blue-300" />
+          <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-10 pt-8 sm:px-6 sm:pb-16 sm:pt-14 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-10 lg:px-8 lg:pb-14 lg:pt-12">
+            <motion.div variants={container} initial="hidden" animate="show" className="min-w-0">
+              <motion.div variants={fadeUp} className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/[0.10] px-3 py-1.5 text-xs font-semibold text-blue-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur">
+                <IconSpark className="h-4 w-4 shrink-0 text-blue-300" />
                 Para equipes que vendem todos os dias
               </motion.div>
-              <motion.h1 variants={fadeUp} className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-[4.35rem]">
+              <motion.h1 variants={fadeUp} className="text-balance mt-5 max-w-full text-[1.85rem] font-semibold leading-[1.1] tracking-tight text-white sm:mt-6 sm:max-w-3xl sm:text-4xl sm:leading-[1.05] md:text-5xl lg:text-[4.35rem]">
                 Voce vende. A Payle organiza o checkout por tras.
               </motion.h1>
-              <motion.p variants={fadeUp} className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+              <motion.p variants={fadeUp} className="mt-4 max-w-full text-[0.95rem] leading-7 text-slate-300 sm:mt-6 sm:max-w-2xl sm:text-base sm:leading-8 md:text-lg">
                 Checkout claro vende mais. A Payle conecta sua loja, pagamento, eventos e recuperacao para sua equipe trabalhar com menos estresse e mais previsibilidade.
               </motion.p>
-              <motion.div variants={fadeUp} className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <motion.a href={PAYLE_CONTATO_HREF} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_22px_50px_rgba(255,255,255,0.16)] transition hover:bg-blue-50" whileHover={reduce ? undefined : { scale: 1.03 }} whileTap={reduce ? undefined : { scale: 0.97 }}>
+              <motion.div variants={fadeUp} className="mt-6 flex w-full max-w-md flex-col gap-2.5 sm:mt-8 sm:max-w-none sm:flex-row sm:gap-3">
+                <motion.a href={PAYLE_CONTATO_HREF} className="payle-cta bg-white text-slate-950 shadow-[0_22px_50px_rgba(255,255,255,0.16)] transition hover:bg-blue-50" whileHover={reduce ? undefined : { scale: 1.03 }} whileTap={reduce ? undefined : { scale: 0.97 }}>
                   Conversar com especialista
-                  <IconArrowRight className="h-4 w-4" />
+                  <IconArrowRight className="h-4 w-4 shrink-0" />
                 </motion.a>
-                <motion.a href="/produto" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.18] bg-white/[0.08] px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:border-blue-300/60 hover:bg-white/[0.12]" whileHover={reduce ? undefined : { scale: 1.02 }} whileTap={reduce ? undefined : { scale: 0.98 }}>
+                <motion.a href="/produto" className="payle-cta border border-white/[0.18] bg-white/[0.08] text-white backdrop-blur transition hover:border-blue-300/60 hover:bg-white/[0.12]" whileHover={reduce ? undefined : { scale: 1.02 }} whileTap={reduce ? undefined : { scale: 0.98 }}>
                   Ver produto
                 </motion.a>
               </motion.div>
-              <motion.div variants={fadeUp} className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
+              <motion.div variants={fadeUp} className="mt-6 grid max-w-full gap-2 sm:mt-8 sm:grid-cols-3 sm:gap-3">
                 {["Cliente entende sem esforco", "Pedido aprovado com status", "Equipe acompanha em tempo real"].map((item) => (
-                  <span key={item} className="inline-flex items-center gap-2 rounded-2xl border border-white/[0.12] bg-white/[0.08] px-3 py-2 text-sm text-slate-200 backdrop-blur">
-                    <IconCheck className="h-4 w-4 text-emerald-300" />
-                    {item}
+                  <span key={item} className="inline-flex items-center gap-2 rounded-2xl border border-white/[0.12] bg-white/[0.08] px-3 py-2 text-xs text-slate-200 backdrop-blur sm:text-sm">
+                    <IconCheck className="h-4 w-4 shrink-0 text-emerald-300" />
+                    <span className="min-w-0">{item}</span>
                   </span>
                 ))}
               </motion.div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: reduce ? 0 : 24, scale: reduce ? 1 : 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ ...ease, delay: reduce ? 0 : 0.12 }} className="relative">
+            <motion.div initial={{ opacity: 0, y: reduce ? 0 : 24, scale: reduce ? 1 : 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ ...ease, delay: reduce ? 0 : 0.12 }} className="relative min-w-0">
               <div className="absolute -left-6 top-6 z-10 hidden w-48 overflow-hidden rounded-2xl border border-white/15 bg-white/[0.12] text-white shadow-[0_20px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl lg:block">
                 <div className="relative h-20">
                   <Image src="/payle-team-operation.png" alt="Equipe acompanhando pedidos em uma operação de e-commerce" fill sizes="192px" className="object-cover" />
@@ -239,14 +239,17 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/35 to-transparent" />
-                    <div className="absolute left-3 top-3 max-w-[14rem]">
+                    <div className="absolute left-3 top-3 right-3 max-w-[calc(100%-1.5rem)]">
                       <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-blue-100">Operação acontecendo</p>
-                      <h2 className="mt-1 text-base font-semibold leading-snug text-white sm:text-lg">Vendas, equipe e checkout no mesmo ritmo.</h2>
+                      <h2 className="mt-1 text-sm font-semibold leading-snug text-white sm:text-base md:text-lg">Vendas, equipe e checkout no mesmo ritmo.</h2>
                     </div>
-                    <div className="absolute bottom-2.5 left-3 right-3 flex flex-wrap gap-1.5">
-                      {heroNotifications.map((item) => (
-                        <span key={item} className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.16] px-2 py-0.5 text-[0.65rem] font-semibold text-white shadow-md backdrop-blur">
-                          <IconCheck className="h-2.5 w-2.5 text-emerald-300" />
+                    <div className="absolute bottom-2.5 left-3 right-3 flex flex-wrap gap-1">
+                      {heroNotifications.map((item, i) => (
+                        <span
+                          key={item}
+                          className={`items-center gap-1 rounded-full border border-white/20 bg-white/[0.16] px-2 py-0.5 text-[0.62rem] font-semibold text-white shadow-md backdrop-blur sm:text-[0.65rem] ${i >= 2 ? "hidden sm:inline-flex" : "inline-flex"}`}
+                        >
+                          <IconCheck className="h-2.5 w-2.5 shrink-0 text-emerald-300" />
                           {item}
                         </span>
                       ))}
@@ -261,7 +264,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                     <span className="rounded-full border border-blue-300/30 bg-blue-400/10 px-2 py-0.5 text-[0.65rem] font-semibold text-blue-100">payle dashboard</span>
                   </div>
 
-                  <div className="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
+                  <div className="grid grid-cols-1 gap-0 lg:grid-cols-[0.92fr_1.08fr]">
                     <div className="border-b border-white/10 bg-slate-950/70 p-3 lg:border-b-0 lg:border-r">
                       <div className="flex items-start justify-between gap-2">
                         <div>
@@ -350,8 +353,8 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
           </div>
         </section>
 
-        <section id="produto" className="relative border-b border-slate-200 bg-white py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section id="produto" className="relative border-b border-slate-200 bg-white payle-section-y">
+          <div className="payle-container">
             <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={container} className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
               <motion.div variants={fadeUp}>
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">Produto</p>
@@ -364,14 +367,14 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
               </motion.p>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={ease} className="mt-12 grid overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 shadow-[0_26px_90px_rgba(15,23,42,0.14)] lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="relative min-h-[19rem]">
+            <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={ease} className="mt-10 grid overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950 shadow-[0_26px_90px_rgba(15,23,42,0.14)] sm:mt-12 sm:rounded-[2rem] lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="relative min-h-[14rem] sm:min-h-[19rem]">
                 <Image src="/payle-team-operation.png" alt="Equipe de e-commerce usando dashboard para acompanhar pedidos" fill sizes="(min-width: 1024px) 620px, 100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-950/30 to-transparent" />
               </div>
-              <div className="bg-[radial-gradient(circle_at_100%_0%,rgba(59,130,246,0.25),transparent_28%)] p-8 text-white">
+              <div className="bg-[radial-gradient(circle_at_100%_0%,rgba(59,130,246,0.25),transparent_28%)] p-5 text-white sm:p-8">
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">Operação real</p>
-                <h3 className="mt-3 text-2xl font-semibold">Uma manha mais tranquila para acompanhar vendas.</h3>
+                <h3 className="mt-3 text-xl font-semibold sm:text-2xl">Uma manha mais tranquila para acompanhar vendas.</h3>
                 <p className="mt-4 leading-7 text-slate-300">
                   Pedidos aprovados, carrinhos retomados e entregas liberadas aparecem como sinais simples. Ninguem precisa ficar perguntando em varios canais se a venda deu certo.
                 </p>
@@ -401,7 +404,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
           </div>
         </section>
 
-        <section id="beneficios" className="relative overflow-hidden bg-slate-50 py-20">
+        <section id="beneficios" className="relative overflow-hidden bg-slate-50 payle-section-y">
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={ease} className="max-w-3xl">
@@ -421,7 +424,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
               transition={ease}
               className="mt-12 grid overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_26px_90px_rgba(15,23,42,0.10)] lg:grid-cols-[0.95fr_1.05fr]"
             >
-              <div className="relative min-h-[24rem]">
+              <div className="relative min-h-[16rem] sm:min-h-[20rem] lg:min-h-[24rem]">
                 <Image
                   src="/payle-human-support.png"
                   alt="Pessoa usando notebook com apoio humano da Payle"
@@ -490,13 +493,13 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-white py-20">
+        <section className="relative overflow-hidden bg-white payle-section-y">
           <div className="absolute left-0 top-8 h-72 w-72 rounded-full bg-blue-100/80 blur-3xl" />
           <div className="absolute bottom-6 right-0 h-80 w-80 rounded-full bg-emerald-100/70 blur-3xl" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={ease} className="overflow-hidden rounded-[2.25rem] border border-slate-200 bg-slate-950 shadow-[0_34px_110px_rgba(15,23,42,0.18)]">
               <div className="grid lg:grid-cols-[1.02fr_0.98fr]">
-                <div className="relative min-h-[34rem] overflow-hidden">
+                <div className="relative min-h-[18rem] overflow-hidden sm:min-h-[26rem] lg:min-h-[34rem]">
                   <Image
                     src="/payle-team-operation.png"
                     alt="Equipe de e-commerce acompanhando pedidos e pagamentos em tempo real"
@@ -514,7 +517,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                   </div>
                   <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/20 bg-white/[0.14] p-5 text-white shadow-[0_24px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl">
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-100">Operação real</p>
-                    <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
+                    <h2 className="mt-3 max-w-xl text-2xl font-semibold tracking-tight sm:text-3xl">
                       Existem pessoas acompanhando cada pedido.
                     </h2>
                     <p className="mt-3 max-w-xl text-sm leading-7 text-slate-200">
@@ -524,7 +527,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                 </div>
 
                 <div className="relative bg-[radial-gradient(circle_at_80%_0%,rgba(59,130,246,0.22),transparent_30%)] p-5 sm:p-7">
-                  <div className="grid gap-4 sm:grid-cols-3">
+                  <div className="grid grid-cols-1 gap-3 min-[400px]:grid-cols-3 sm:gap-4">
                     {[
                       ["1.248", "pedidos acompanhados"],
                       ["18 min", "tempo economizado"],
@@ -615,7 +618,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
           </div>
         </section>
 
-        <section id="integracoes" className="relative overflow-hidden bg-white py-20">
+        <section id="integracoes" className="relative overflow-hidden bg-white payle-section-y">
           <div className="absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-100/70 blur-3xl" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
@@ -629,9 +632,9 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                 </p>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={ease} className="relative rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_26px_90px_rgba(15,23,42,0.1)]">
-                <div className="absolute inset-6 rounded-[1.5rem] border border-dashed border-blue-200" />
-                <div className="relative grid gap-5 md:grid-cols-[1fr_0.86fr_1fr] md:items-center">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={ease} className="relative rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-[0_26px_90px_rgba(15,23,42,0.1)] sm:rounded-[2rem] sm:p-5">
+                <div className="absolute inset-4 rounded-[1.25rem] border border-dashed border-blue-200 sm:inset-6 sm:rounded-[1.5rem]" />
+                <div className="relative flex flex-col items-center gap-6 md:grid md:grid-cols-[1fr_0.86fr_1fr] md:items-center md:gap-5">
                   <div className="space-y-3">
                     {channels.slice(0, 3).map((name) => (
                       <div key={name} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm">
@@ -640,7 +643,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                     ))}
                   </div>
 
-                  <div className="relative mx-auto flex h-44 w-44 items-center justify-center rounded-full border border-blue-200 bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-[0_24px_70px_rgba(37,99,235,0.25)]">
+                  <div className="relative mx-auto flex h-36 w-36 shrink-0 items-center justify-center rounded-full border border-blue-200 bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-[0_24px_70px_rgba(37,99,235,0.25)] sm:h-44 sm:w-44">
                     <div className="absolute inset-3 rounded-full border border-white/20" />
                     <IconPayleMark className="h-12 w-12" />
                     <span className="absolute -bottom-3 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-blue-700 shadow-lg">Payle</span>
@@ -659,7 +662,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
           </div>
         </section>
 
-        <section id="checkout" className="relative overflow-hidden bg-slate-950 py-20 text-white">
+        <section id="checkout" className="relative overflow-hidden bg-slate-950 payle-section-y text-white">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.25),transparent_28%),radial-gradient(circle_at_90%_80%,rgba(16,185,129,0.14),transparent_24%)]" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={ease} className="max-w-3xl">
@@ -672,11 +675,12 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
               </p>
             </motion.div>
 
-            <motion.div variants={container} initial="hidden" whileInView="show" viewport={viewport} className="mt-12 grid gap-4 lg:grid-cols-5">
+            <div className="payle-h-scroll mt-10 sm:mt-12">
+              <motion.div variants={container} initial="hidden" whileInView="show" viewport={viewport} className="flex snap-x snap-mandatory gap-3 lg:grid lg:grid-cols-5 lg:gap-4 lg:snap-none">
               {flow.map((item, index) => (
-                <motion.div key={item.title} variants={fadeUp} className="relative">
+                <motion.div key={item.title} variants={fadeUp} className="payle-h-scroll-item relative">
                   {index < flow.length - 1 && <div className="absolute left-[calc(50%+2rem)] top-10 hidden h-px w-[calc(100%-2rem)] bg-gradient-to-r from-blue-400/70 to-transparent lg:block" />}
-                  <div className="relative h-full rounded-3xl border border-white/12 bg-white/[0.07] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.2)] backdrop-blur">
+                  <div className="relative h-full rounded-2xl border border-white/12 bg-white/[0.07] p-4 shadow-[0_24px_70px_rgba(0,0,0,0.2)] backdrop-blur sm:rounded-3xl sm:p-5">
                     <span className="text-xs font-semibold text-blue-300">{item.step}</span>
                     <div className="mt-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/15 text-blue-200 ring-1 ring-blue-300/20">
                       <item.Icon className="h-6 w-6" />
@@ -686,16 +690,17 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                   </div>
                 </motion.div>
               ))}
-            </motion.div>
+              </motion.div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewport}
               transition={ease}
-              className="mt-10 grid overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.07] shadow-[0_28px_90px_rgba(0,0,0,0.24)] backdrop-blur lg:grid-cols-[0.88fr_1.12fr]"
+              className="mt-10 grid overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[0.07] shadow-[0_28px_90px_rgba(0,0,0,0.24)] backdrop-blur sm:rounded-[2rem] lg:grid-cols-[0.88fr_1.12fr]"
             >
-              <div className="relative min-h-[25rem]">
+              <div className="relative min-h-[16rem] sm:min-h-[22rem] lg:min-h-[25rem]">
                 <Image
                   src="/payle-customer-checkout.png"
                   alt="Cliente comprando pelo celular com checkout simples"
@@ -717,7 +722,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                   <p className="text-xs text-slate-400">pedido liberado</p>
                 </div>
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">Jornada humana</p>
-                <h3 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight text-white">
+                <h3 className="mt-3 max-w-xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
                   Cliente compra, Payle organiza, equipe acompanha.
                 </h3>
                 <p className="mt-4 max-w-xl leading-8 text-slate-300">

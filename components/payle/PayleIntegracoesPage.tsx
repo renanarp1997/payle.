@@ -203,7 +203,7 @@ function EcosystemFlow({ viewport, ease }: { viewport: { once: boolean; margin: 
           viewport={viewport}
           transition={{ ...ease, delay: 0.06 }}
         >
-          <div className="flex min-w-[44rem] gap-2 lg:min-w-0 lg:grid lg:grid-cols-6">
+          <div className="payle-h-scroll flex gap-2 lg:grid lg:grid-cols-6">
             {ecosystemFlow.map((node, i) => (
               <div key={node.label} className="relative flex-1 px-0.5">
                 {i > 0 && (

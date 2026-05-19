@@ -61,7 +61,7 @@ function PayleSiteHeaderInner() {
         scrolled ? "border-slate-200/90 bg-white/90 shadow-[0_12px_40px_rgba(15,23,42,0.08)]" : "border-white/10 bg-white/70"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:gap-4 sm:px-6 lg:px-8">
         <motion.div whileHover={reduce ? undefined : { scale: 1.02 }}>
           <Link href={PAYLE_HOME_HREF} className="flex items-center gap-2 font-semibold tracking-tight">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-[0_12px_28px_rgba(37,99,235,0.32)]">
@@ -134,7 +134,7 @@ function PayleSiteHeaderInner() {
             transition={{ duration: reduce ? 0.01 : 0.25 }}
             className="overflow-hidden border-t border-slate-200 bg-white md:hidden"
           >
-            <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
+            <nav className="mx-auto flex max-h-[min(70vh,28rem)] max-w-7xl flex-col gap-0.5 overflow-y-auto overscroll-contain px-4 py-3">
               <Link href={PAYLE_HOME_HREF} className={mobileNavClass(inicioActive)} onClick={() => setOpen(false)}>
                 Início
               </Link>
@@ -148,7 +148,7 @@ function PayleSiteHeaderInner() {
               </Link>
               <Link
                 href={PAYLE_CONTATO_HREF}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-4 py-3 text-sm font-semibold text-white"
+                className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-slate-950 px-4 py-3 text-sm font-semibold text-white"
                 onClick={() => setOpen(false)}
               >
                 Falar com a Payle

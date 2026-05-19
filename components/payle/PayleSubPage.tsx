@@ -177,7 +177,7 @@ export function PayleSubPage({ page }: { page: PageKey }) {
   const viewport = { once: true, margin: "-80px" };
 
   return (
-    <div className="min-h-screen overflow-hidden bg-white text-slate-950">
+    <div className="min-h-screen overflow-x-hidden bg-white text-slate-950">
       <PayleSiteHeader />
 
       <main>
