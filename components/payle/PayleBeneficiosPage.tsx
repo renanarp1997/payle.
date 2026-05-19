@@ -135,7 +135,7 @@ export function PayleBeneficiosHero({ ease }: { ease: { duration: number; ease?:
     <section className="relative overflow-hidden bg-[#0a0f1a] text-white">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_15%_20%,rgba(59,130,246,0.22),transparent),radial-gradient(circle_at_90%_85%,rgba(16,185,129,0.12),transparent_40%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:64px_64px] opacity-40" />
-      <div className="relative mx-auto min-h-[calc(100vh-4rem)] max-w-7xl px-4 py-14 sm:px-6 lg:min-h-[calc(100vh-3.5rem)] lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 py-14 pb-16 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={ease}>
             <p className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-emerald-200">

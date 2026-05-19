@@ -7,8 +7,8 @@ export const payleMainNav = [
   { href: "/operacao", label: "Operações" },
   { href: "/recursos", label: "Recursos" },
   { href: "/planos", label: "Planos" },
-  { href: "/duvidas", label: "Duvidas" },
-  { href: "/integracoes", label: "Integracoes" },
+  { href: "/duvidas", label: "Dúvidas" },
+  { href: "/integracoes", label: "Integrações" },
   { href: "/checkout", label: "Checkout" },
   { href: "/contato", label: "Contato" }
 ] as const;

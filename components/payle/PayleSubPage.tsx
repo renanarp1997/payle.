@@ -5,9 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { ComponentType, SVGProps } from "react";
 import { PayleBeneficiosClosingCta, PayleBeneficiosHero, PayleBeneficiosSections } from "./PayleBeneficiosPage";
-import { PayleContactSection } from "./PayleContactSection";
+import { PayleCheckoutClosingCta, PayleCheckoutHero, PayleCheckoutSections } from "./PayleCheckoutPage";
+import { PayleContatoClosingCta, PayleContatoHero, PayleContatoSections } from "./PayleContatoPage";
+import { PayleFluxoClosingCta, PayleFluxoHero, PayleFluxoSections } from "./PayleFluxoPage";
+import { PayleDuvidasClosingCta, PayleDuvidasHero, PayleDuvidasSections } from "./PayleDuvidasPage";
+import { PayleIntegracoesClosingCta, PayleIntegracoesHero, PayleIntegracoesSections } from "./PayleIntegracoesPage";
+import { PaylePlanosClosingCta, PaylePlanosHero, PaylePlanosSections } from "./PaylePlanosPage";
+import { PayleRecursosClosingCta, PayleRecursosHero, PayleRecursosSections } from "./PayleRecursosPage";
 import { PayleInnerMarketingPage, type InnerMarketingPageKey } from "./PayleInnerMarketingPages";
-import { PayleOperacaoClosingCta, PayleOperacaoHero, PayleOperacaoMainSections } from "./PayleOperacaoPage";
 import { PayleProdutoClosingCta, PayleProdutoHero, PayleProdutoMainSections } from "./PayleProdutoPage";
 import { PayleSiteHeader } from "./PayleSiteHeader";
 import { PAYLE_CONTATO_HREF, PAYLE_FLUXO_HREF } from "./payleSiteNav";
@@ -139,12 +144,12 @@ const pageContent: Record<
   contato: {
     eyebrow: "Contato",
     title: "Fale com a Payle.",
-    body: "Comercial e suporte com contexto: volume, integracoes e proximos passos em uma conversa objetiva.",
+    body: "Comercial e suporte com contexto: volume, integrações e próximos passos em uma conversa objetiva.",
     image: "/payle-consultants-highfive.png",
     cards: [
       ["Comercial", "Proposta alinhada ao seu cenario e canais.", IconCheck],
       ["Resposta humana", "Time que entende checkout, pedido e pagamento.", IconActivity],
-      ["Integracoes", "Avaliamos gateways e loja na mesma conversa.", IconPlug]
+      ["Integrações", "Avaliamos gateways e loja na mesma conversa.", IconPlug]
     ]
   }
 };
@@ -158,9 +163,7 @@ const flowSteps = [
 ] satisfies [string, string, SvgIcon][];
 
 const innerMarketingPages: Record<InnerMarketingPageKey, true> = {
-  recursos: true,
-  planos: true,
-  duvidas: true
+  operacao: true
 };
 
 function isInnerMarketingPage(page: PageKey): page is InnerMarketingPageKey {
@@ -190,11 +193,47 @@ export function PayleSubPage({ page }: { page: PageKey }) {
             <PayleBeneficiosSections viewport={viewport} />
             <PayleBeneficiosClosingCta />
           </>
-        ) : page === "operacao" ? (
+        ) : page === "recursos" ? (
           <>
-            <PayleOperacaoHero ease={ease} />
-            <PayleOperacaoMainSections viewport={viewport} />
-            <PayleOperacaoClosingCta />
+            <PayleRecursosHero ease={ease} />
+            <PayleRecursosSections viewport={viewport} />
+            <PayleRecursosClosingCta />
+          </>
+        ) : page === "planos" ? (
+          <>
+            <PaylePlanosHero ease={ease} />
+            <PaylePlanosSections viewport={viewport} />
+            <PaylePlanosClosingCta />
+          </>
+        ) : page === "duvidas" ? (
+          <>
+            <PayleDuvidasHero ease={ease} />
+            <PayleDuvidasSections viewport={viewport} />
+            <PayleDuvidasClosingCta />
+          </>
+        ) : page === "integracoes" ? (
+          <>
+            <PayleIntegracoesHero ease={ease} />
+            <PayleIntegracoesSections viewport={viewport} />
+            <PayleIntegracoesClosingCta />
+          </>
+        ) : page === "checkout" ? (
+          <>
+            <PayleCheckoutHero ease={ease} />
+            <PayleCheckoutSections viewport={viewport} />
+            <PayleCheckoutClosingCta />
+          </>
+        ) : page === "contato" ? (
+          <>
+            <PayleContatoHero ease={ease} />
+            <PayleContatoSections viewport={viewport} />
+            <PayleContatoClosingCta />
+          </>
+        ) : page === "fluxo" ? (
+          <>
+            <PayleFluxoHero ease={ease} />
+            <PayleFluxoSections viewport={viewport} />
+            <PayleFluxoClosingCta />
           </>
         ) : isInnerMarketingPage(page) ? (
           <PayleInnerMarketingPage page={page} ease={ease} viewport={viewport} />
@@ -245,9 +284,6 @@ export function PayleSubPage({ page }: { page: PageKey }) {
           </div>
         </section>
 
-        {page === "contato" ? (
-          <PayleContactSection />
-        ) : (
         <section className="relative overflow-hidden bg-white py-20">
           <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-100/70 blur-3xl" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -280,9 +316,7 @@ export function PayleSubPage({ page }: { page: PageKey }) {
             )}
           </div>
         </section>
-        )}
 
-        {page !== "contato" && (
         <section className="relative overflow-hidden bg-slate-950 py-20 text-white">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(37,99,235,0.28),transparent_30%)]" />
           <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
@@ -296,7 +330,6 @@ export function PayleSubPage({ page }: { page: PageKey }) {
             </Link>
           </div>
         </section>
-        )}
           </>
         )}
       </main>

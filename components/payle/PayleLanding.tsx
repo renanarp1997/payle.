@@ -146,7 +146,7 @@ const testimonials = [
 
 const footerGroups = [
   { title: "Produto", links: ["Checkout", "Dashboard", "Tracking", "Recuperacao"] },
-  { title: "Integracoes", links: ["Shopify", "Gateways", "ERPs", "Infoprodutos"] },
+  { title: "Integrações", links: ["Shopify", "Gateways", "ERPs", "Infoprodutos"] },
   { title: "Empresa", links: ["Sobre", "Seguranca", "Status", "Privacidade"] },
   { title: "Contato", links: ["Comercial", "Suporte", "LinkedIn", "Email"] }
 ];
@@ -620,7 +620,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
               <motion.div initial={{ opacity: 0, x: reduce ? 0 : -18 }} whileInView={{ opacity: 1, x: 0 }} viewport={viewport} transition={ease}>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">Integracoes</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">Integrações</p>
                 <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
                   Um ecossistema conectado ao redor do checkout.
                 </h2>
