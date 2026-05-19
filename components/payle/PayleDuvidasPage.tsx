@@ -8,7 +8,7 @@ import { PAYLE_CONTATO_HREF } from "./payleSiteNav";
 
 const faqEditorial: { q: string; a: string }[] = [
   {
-    q: "Preciso largar minha loja pra usar a Payle?",
+    q: "Preciso largar minha loja para usar a Payle?",
     a: "Não. Encaixamos em volta do que você já tem — sem trocar de plataforma."
   },
   {
@@ -20,8 +20,8 @@ const faqEditorial: { q: string; a: string }[] = [
     a: "Na maioria dos casos, não. Usamos o que você já tem."
   },
   {
-    q: "Demora muito pra colocar no ar?",
-    a: "Na conversa, alinhamos prazo honesto pro seu cenário."
+    q: "Demora muito para colocar no ar?",
+    a: "Na conversa, alinhamos prazo honesto para o seu cenário."
   },
   {
     q: "Quando o cliente chama, o suporte entende o pedido?",

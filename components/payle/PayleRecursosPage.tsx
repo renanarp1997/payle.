@@ -406,7 +406,7 @@ function EcosystemConnected({
       <motion.div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={ease} className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-300">Ecossistema conectado</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Tudo se conversa automaticamente.</h2>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Tudo se conversa automáticamente.</h2>
           <p className="mt-4 text-base leading-8 text-slate-400">
             Do checkout ao suporte — cada camada dispara a próxima com contexto, não com planilha paralela.
           </p>
@@ -879,7 +879,7 @@ export function PayleRecursosClosingCta() {
               Quer ver seus recursos funcionando como sistema?
             </h2>
             <p className="mt-4 max-w-md text-base leading-7 text-slate-400">
-              A Payle conecta checkout, recuperação, tracking, pagamento e operação em um fluxo mais claro pra equipe e pro
+              A Payle conecta checkout, recuperação, tracking, pagamento e operação em um fluxo mais claro para a equipe e para o
               cliente.
             </p>
             <ul className="mt-8 space-y-3">

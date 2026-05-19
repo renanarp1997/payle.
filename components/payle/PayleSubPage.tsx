@@ -54,7 +54,7 @@ const pageContent: Record<
     ]
   },
   beneficios: {
-    eyebrow: "Beneficios",
+    eyebrow: "Benefícios",
     title: "Menos atrito no pagamento. Mais tranquilidade para vender.",
     body: "A Payle organiza checkout, tracking, pagamentos e status para sua equipe acompanhar a venda com clareza — do clique no anúncio até o pedido aprovado.",
     image: "/payle-team-operation.png",
@@ -147,7 +147,7 @@ const pageContent: Record<
     body: "Comercial e suporte com contexto: volume, integrações e próximos passos em uma conversa objetiva.",
     image: "/payle-consultants-highfive.png",
     cards: [
-      ["Comercial", "Proposta alinhada ao seu cenario e canais.", IconCheck],
+      ["Comercial", "Proposta alinhada ao seu cenário e canais.", IconCheck],
       ["Resposta humana", "Time que entende checkout, pedido e pagamento.", IconActivity],
       ["Integrações", "Avaliamos gateways e loja na mesma conversa.", IconPlug]
     ]
@@ -255,7 +255,7 @@ export function PayleSubPage({ page }: { page: PageKey }) {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href={PAYLE_CONTATO_HREF} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-blue-50">
-                  Conversar com especialista
+                  Conversar com especialistas
                   <IconArrowRight className="h-4 w-4" />
                 </Link>
                 <Link href={PAYLE_FLUXO_HREF} className="inline-flex items-center justify-center rounded-full border border-white/[0.18] bg-white/[0.08] px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/[0.12]">

@@ -51,7 +51,7 @@ const organizedOps = [
   "Checkout conectado ao pagamento",
   "Status sincronizado em tempo real",
   "Equipe alinhada no mesmo fluxo",
-  "Entrega liberada automaticamente",
+  "Entrega liberada automáticamente",
   "Contexto completo para suporte"
 ];
 
@@ -193,7 +193,7 @@ export function PayleFluxoHero({ ease }: { ease: { duration: number; ease?: read
               href={PAYLE_CONTATO_HREF}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-blue-50"
             >
-              Conversar com especialista
+              Conversar com especialistas
               <IconArrowRight className="h-4 w-4" />
             </Link>
             <a
@@ -605,7 +605,7 @@ export function PayleFluxoClosingCta() {
               Quer enxergar sua operação funcionando em fluxo único?
             </h2>
             <p className="mt-4 max-w-md text-base leading-7 text-slate-400">
-              A Payle conecta checkout, pagamento, status, entrega e suporte em uma jornada mais clara pra equipe e pro
+              A Payle conecta checkout, pagamento, status, entrega e suporte em uma jornada mais clara para a equipe e para o
               cliente.
             </p>
             <ul className="mt-8 space-y-3">
@@ -620,7 +620,7 @@ export function PayleFluxoClosingCta() {
               href={PAYLE_CONTATO_HREF}
               className="mt-9 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_16px_48px_rgba(255,255,255,0.2),0_0_36px_rgba(59,130,246,0.18)] transition hover:bg-blue-50"
             >
-              Conversar com especialista
+              Conversar com especialistas
               <IconArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>

@@ -196,7 +196,7 @@ export function PayleContatoHero({ ease }: { ease: { duration: number; ease?: re
               href="#formulario-contato"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-blue-50"
             >
-              Conversar com especialista
+              Conversar com especialistas
               <IconArrowRight className="h-4 w-4" />
             </a>
             <Link
@@ -626,7 +626,7 @@ export function PayleContatoClosingCta() {
               href="#formulario-contato"
               className="mt-9 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_16px_48px_rgba(255,255,255,0.2),0_0_36px_rgba(59,130,246,0.18)] transition hover:bg-blue-50"
             >
-              Conversar com especialista
+              Conversar com especialistas
               <IconArrowRight className="h-4 w-4" />
             </a>
           </motion.div>

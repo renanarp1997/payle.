@@ -172,7 +172,7 @@ export function PayleCheckoutHero({ ease }: { ease: { duration: number; ease?: r
               href={PAYLE_CONTATO_HREF}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-blue-50"
             >
-              Conversar com especialista
+              Conversar com especialistas
               <IconArrowRight className="h-4 w-4" />
             </Link>
             <Link

@@ -17,11 +17,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Payle - Checkout moderno para operacoes que querem crescer",
+    default: "Payle - Checkout moderno para operações que querem crescer",
     template: "%s | Payle"
   },
   description:
-    "A Payle cria uma experiencia de pagamento clara para o cliente e uma rotina mais visivel para e-commerces, Shopify, infoprodutos e operacoes digitais.",
+    "A Payle cria uma experiência de pagamento clara para o cliente e uma rotina mais visível para e-commerces, Shopify, infoprodutos e operações digitais.",
   keywords: [
     "Payle",
     "checkout",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "WooCommerce",
     "infoproduto",
     "e-commerce",
-    "recuperacao de carrinho",
+    "recuperação de carrinho",
     "checkout personalizado"
   ]
 };

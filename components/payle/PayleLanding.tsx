@@ -5,8 +5,8 @@ import Image from "next/image";
 import { ComponentType, SVGProps } from "react";
 import { type PayleThemeId } from "./payleTheme";
 import { PayleContactSection } from "./PayleContactSection";
+import { PayleHero } from "./PayleHero";
 import { PayleSiteHeader } from "./PayleSiteHeader";
-import { PAYLE_CONTATO_HREF } from "./payleSiteNav";
 import {
   IconActivity,
   IconArrowRight,
@@ -25,17 +25,11 @@ import {
 
 type SvgIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
-const metrics = [
-  { value: "R$ 18.420", label: "processados hoje", trend: "+12%" },
-  { value: "84%", label: "aprovacao no fluxo", trend: "estavel" },
-  { value: "32", label: "eventos rastreados", trend: "ao vivo" }
-];
-
 const benefits: { eyebrow: string; title: string; body: string; stat: string; Icon: SvgIcon }[] = [
   {
     eyebrow: "Marca",
-    title: "Seu cliente entende o pagamento sem esforco",
-    body: "A pagina fica clara, bonita e familiar. Menos duvida no checkout, mais tranquilidade para quem esta comprando.",
+    title: "Seu cliente entende o pagamento sem esforço",
+    body: "A página fica clara, bonita e familiar. Menos dúvida no checkout, mais tranquilidade para quem está comprando.",
     stat: "mais clareza",
     Icon: IconPanel
   },
@@ -49,28 +43,28 @@ const benefits: { eyebrow: string; title: string; body: string; stat: string; Ic
   {
     eyebrow: "Pagamento",
     title: "Pagamento simples, mesmo no dia cheio",
-    body: "Pix, cartao e boleto aparecem em uma jornada objetiva para o comprador concluir sem se sentir perdido.",
-    stat: "menos friccao",
+    body: "Pix, cartão e boleto aparecem em uma jornada objetiva para o comprador concluir sem se sentir perdido.",
+    stat: "menos fricção",
     Icon: IconCardLock
   },
   {
     eyebrow: "Dados",
     title: "Status vivo para acompanhar a venda",
-    body: "Pedido criado, Pix aprovado, evento enviado, entrega liberada. Tudo com sinais simples para agir mais rapido.",
+    body: "Pedido criado, Pix aprovado, evento enviado, entrega liberada. Tudo com sinais simples para agir mais rápido.",
     stat: "ao vivo",
     Icon: IconActivity
   },
   {
-    eyebrow: "Recuperacao",
+    eyebrow: "Recuperação",
     title: "Recupere sem parecer insistente",
-    body: "Lembretes de carrinho entram com contexto e cuidado, sem transformar sua marca em uma maquina de mensagens.",
+    body: "Lembretes de carrinho entram com contexto e cuidado, sem transformar sua marca em uma máquina de mensagens.",
     stat: "com bom senso",
     Icon: IconWebhook
   },
   {
     eyebrow: "Crescimento",
     title: "Uma operação mais tranquila para crescer",
-    body: "Loja, infoproduto ou agencia: a Payle ajuda a manter a base organizada enquanto o volume aumenta.",
+    body: "Loja, infoproduto ou agência: a Payle ajuda a manter a base organizada enquanto o volume aumenta.",
     stat: "crescimento saudavel",
     Icon: IconLayers
   }
@@ -79,17 +73,17 @@ const benefits: { eyebrow: string; title: string; body: string; stat: string; Ic
 const useCases = [
   {
     title: "Lojas Shopify",
-    body: "Venda com uma experiencia de pagamento mais alinhada a sua marca.",
+    body: "Venda com uma experiência de pagamento mais alinhada à sua marca.",
     Icon: IconWallet
   },
   {
     title: "Infoprodutos",
-    body: "Pagamento organizado e entrega automatizada apos aprovacao.",
+    body: "Pagamento organizado e entrega automatizada após aprovação.",
     Icon: IconSpark
   },
   {
-    title: "Agencias",
-    body: "Padronize checkout, tracking e recuperacao para diferentes clientes.",
+    title: "Agências",
+    body: "Padronize checkout, tracking e recuperação para diferentes clientes.",
     Icon: IconSplit
   }
 ];
@@ -100,54 +94,35 @@ const gateways = ["Asaas", "Mercado Pago", "PagSeguro", "Efi", "Stone", "Cielo",
 const flow = [
   { step: "01", title: "Produto", body: "Oferta clara, dados da compra e origem do pedido.", Icon: IconWallet },
   { step: "02", title: "Checkout", body: "Tela responsiva com identidade da sua marca.", Icon: IconPanel },
-  { step: "03", title: "Pagamento", body: "Pix, cartao ou boleto em uma jornada simples.", Icon: IconCardLock },
-  { step: "04", title: "Aprovacao", body: "Status visivel para cliente e operação.", Icon: IconCheck },
-  { step: "05", title: "Entrega", body: "Pedido, acesso ou arquivo liberado com menos friccao.", Icon: IconBolt }
-];
-
-const checkoutEvents: { label: string; body: string; tone: "blue" | "slate" | "emerald"; Icon: SvgIcon }[] = [
-  { label: "Pix aprovado", body: "Pedido liberado em segundos", tone: "blue", Icon: IconBolt },
-  { label: "Evento enviado", body: "Meta e Google receberam sinal", tone: "slate", Icon: IconActivity },
-  { label: "Entrega pronta", body: "Acesso liberado automaticamente", tone: "emerald", Icon: IconCheck }
-];
-
-const liveActivities = [
-  { name: "Marina", action: "aprovou um pedido via Pix", time: "agora" },
-  { name: "Rafael", action: "recuperou um carrinho", time: "2 min" },
-  { name: "Bianca", action: "liberou acesso ao produto", time: "5 min" }
-];
-
-const heroNotifications = [
-  "Pix aprovado",
-  "Pedido liberado",
-  "Carrinho recuperado",
-  "Shopify sincronizada"
+  { step: "03", title: "Pagamento", body: "Pix, cartão ou boleto em uma jornada simples.", Icon: IconCardLock },
+  { step: "04", title: "Aprovação", body: "Status visível para cliente e operação.", Icon: IconCheck },
+  { step: "05", title: "Entrega", body: "Pedido, acesso ou arquivo liberado com menos fricção.", Icon: IconBolt }
 ];
 
 const socialLogos = ["Nuvem Azul", "Casa Lume", "Studio Norte", "Curso Vivo", "Marca Boa"];
 
 const testimonials = [
   {
-    quote: "A maior mudanca foi parar de apagar incendio no checkout. Agora a equipe sabe o que aconteceu em cada pedido.",
+    quote: "A maior mudança foi parar de apagar incêndio no checkout. Agora a equipe sabe o que aconteceu em cada pedido.",
     name: "Camila R.",
     role: "Operação de e-commerce"
   },
   {
-    quote: "O cliente entende o pagamento e a gente acompanha os eventos sem depender de varias abas abertas.",
+    quote: "O cliente entende o pagamento e a gente acompanha os eventos sem depender de várias abas abertas.",
     name: "Diego M.",
-    role: "Agencia de performance"
+    role: "Agência de performance"
   },
   {
-    quote: "Ficou mais facil vender infoproduto com entrega automatica sem deixar o suporte sobrecarregado.",
+    quote: "Ficou mais fácil vender infoproduto com entrega automática sem deixar o suporte sobrecarregado.",
     name: "Livia A.",
     role: "Produtora digital"
   }
 ];
 
 const footerGroups = [
-  { title: "Produto", links: ["Checkout", "Dashboard", "Tracking", "Recuperacao"] },
+  { title: "Produto", links: ["Checkout", "Dashboard", "Tracking", "Recuperação"] },
   { title: "Integrações", links: ["Shopify", "Gateways", "ERPs", "Infoprodutos"] },
-  { title: "Empresa", links: ["Sobre", "Seguranca", "Status", "Privacidade"] },
+  { title: "Empresa", links: ["Sobre", "Segurança", "Status", "Privacidade"] },
   { title: "Contato", links: ["Comercial", "Suporte", "LinkedIn", "Email"] }
 ];
 
@@ -173,185 +148,8 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
       <PayleSiteHeader />
 
       <main className="relative z-10 w-full max-w-[100vw] overflow-x-hidden">
-        <section className="relative overflow-hidden bg-slate-950">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(59,130,246,0.32),transparent_28%),radial-gradient(circle_at_18%_80%,rgba(16,185,129,0.16),transparent_26%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.055)_1px,transparent_1px)] bg-[length:76px_76px] opacity-35" />
+        <PayleHero />
 
-          <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-10 pt-8 sm:px-6 sm:pb-16 sm:pt-14 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-10 lg:px-8 lg:pb-14 lg:pt-12">
-            <motion.div variants={container} initial="hidden" animate="show" className="min-w-0">
-              <motion.div variants={fadeUp} className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/[0.10] px-3 py-1.5 text-xs font-semibold text-blue-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur">
-                <IconSpark className="h-4 w-4 shrink-0 text-blue-300" />
-                Para equipes que vendem todos os dias
-              </motion.div>
-              <motion.h1 variants={fadeUp} className="text-balance mt-5 max-w-full text-[1.85rem] font-semibold leading-[1.1] tracking-tight text-white sm:mt-6 sm:max-w-3xl sm:text-4xl sm:leading-[1.05] md:text-5xl lg:text-[4.35rem]">
-                Voce vende. A Payle organiza o checkout por tras.
-              </motion.h1>
-              <motion.p variants={fadeUp} className="mt-4 max-w-full text-[0.95rem] leading-7 text-slate-300 sm:mt-6 sm:max-w-2xl sm:text-base sm:leading-8 md:text-lg">
-                Checkout claro vende mais. A Payle conecta sua loja, pagamento, eventos e recuperacao para sua equipe trabalhar com menos estresse e mais previsibilidade.
-              </motion.p>
-              <motion.div variants={fadeUp} className="mt-6 flex w-full max-w-md flex-col gap-2.5 sm:mt-8 sm:max-w-none sm:flex-row sm:gap-3">
-                <motion.a href={PAYLE_CONTATO_HREF} className="payle-cta bg-white text-slate-950 shadow-[0_22px_50px_rgba(255,255,255,0.16)] transition hover:bg-blue-50" whileHover={reduce ? undefined : { scale: 1.03 }} whileTap={reduce ? undefined : { scale: 0.97 }}>
-                  Conversar com especialista
-                  <IconArrowRight className="h-4 w-4 shrink-0" />
-                </motion.a>
-                <motion.a href="/produto" className="payle-cta border border-white/[0.18] bg-white/[0.08] text-white backdrop-blur transition hover:border-blue-300/60 hover:bg-white/[0.12]" whileHover={reduce ? undefined : { scale: 1.02 }} whileTap={reduce ? undefined : { scale: 0.98 }}>
-                  Ver produto
-                </motion.a>
-              </motion.div>
-              <motion.div variants={fadeUp} className="mt-6 grid max-w-full gap-2 sm:mt-8 sm:grid-cols-3 sm:gap-3">
-                {["Cliente entende sem esforco", "Pedido aprovado com status", "Equipe acompanha em tempo real"].map((item) => (
-                  <span key={item} className="inline-flex items-center gap-2 rounded-2xl border border-white/[0.12] bg-white/[0.08] px-3 py-2 text-xs text-slate-200 backdrop-blur sm:text-sm">
-                    <IconCheck className="h-4 w-4 shrink-0 text-emerald-300" />
-                    <span className="min-w-0">{item}</span>
-                  </span>
-                ))}
-              </motion.div>
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0, y: reduce ? 0 : 24, scale: reduce ? 1 : 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ ...ease, delay: reduce ? 0 : 0.12 }} className="relative min-w-0">
-              <div className="absolute -left-6 top-6 z-10 hidden w-48 overflow-hidden rounded-2xl border border-white/15 bg-white/[0.12] text-white shadow-[0_20px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl lg:block">
-                <div className="relative h-20">
-                  <Image src="/payle-team-operation.png" alt="Equipe acompanhando pedidos em uma operação de e-commerce" fill sizes="192px" className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
-                </div>
-                <div className="p-2.5">
-                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-blue-100">Rotina da equipe</p>
-                  <p className="mt-1 text-xs font-semibold">Menos tempo procurando status.</p>
-                </div>
-              </div>
-              <div className="absolute -right-1 bottom-10 hidden w-48 rounded-2xl border border-white/15 bg-white/[0.12] p-2.5 text-white shadow-[0_20px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:block">
-                <p className="text-xs font-semibold">Carrinho recuperado</p>
-                <div className="mt-2 h-1.5 rounded-full bg-white/[0.12]">
-                  <div className="h-1.5 w-3/4 rounded-full bg-emerald-400" />
-                </div>
-                <p className="mt-1.5 text-[0.65rem] text-slate-300">cliente voltou pelo lembrete certo</p>
-              </div>
-
-              <div className="rounded-[1.35rem] border border-white/[0.14] bg-white/[0.10] p-1.5 shadow-[0_28px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl">
-                <div className="overflow-hidden rounded-[1.2rem] border border-white/12 bg-slate-900">
-                  <div className="relative h-32 border-b border-white/10 sm:h-36">
-                    <Image
-                      src="/payle-team-operation.png"
-                      alt="Equipe acompanhando vendas em tempo real com a Payle"
-                      fill
-                      priority
-                      sizes="(min-width: 1024px) 680px, 100vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/35 to-transparent" />
-                    <div className="absolute left-3 top-3 right-3 max-w-[calc(100%-1.5rem)]">
-                      <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-blue-100">Operação acontecendo</p>
-                      <h2 className="mt-1 text-sm font-semibold leading-snug text-white sm:text-base md:text-lg">Vendas, equipe e checkout no mesmo ritmo.</h2>
-                    </div>
-                    <div className="absolute bottom-2.5 left-3 right-3 flex flex-wrap gap-1">
-                      {heroNotifications.map((item, i) => (
-                        <span
-                          key={item}
-                          className={`items-center gap-1 rounded-full border border-white/20 bg-white/[0.16] px-2 py-0.5 text-[0.62rem] font-semibold text-white shadow-md backdrop-blur sm:text-[0.65rem] ${i >= 2 ? "hidden sm:inline-flex" : "inline-flex"}`}
-                        >
-                          <IconCheck className="h-2.5 w-2.5 shrink-0 text-emerald-300" />
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.06] px-3 py-2">
-                    <div className="flex items-center gap-1.5">
-                      <span className="h-2 w-2 rounded-full bg-red-300" />
-                      <span className="h-2 w-2 rounded-full bg-amber-300" />
-                      <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                    </div>
-                    <span className="rounded-full border border-blue-300/30 bg-blue-400/10 px-2 py-0.5 text-[0.65rem] font-semibold text-blue-100">payle dashboard</span>
-                  </div>
-
-                  <div className="grid grid-cols-1 gap-0 lg:grid-cols-[0.92fr_1.08fr]">
-                    <div className="border-b border-white/10 bg-slate-950/70 p-3 lg:border-b-0 lg:border-r">
-                      <div className="flex items-start justify-between gap-2">
-                        <div>
-                          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-slate-500">Visão da operação</p>
-                          <h2 className="mt-1 text-lg font-semibold text-white">Pagamentos em movimento</h2>
-                        </div>
-                        <span className="rounded-xl bg-emerald-400/10 p-2 text-emerald-300">
-                          <IconActivity className="h-4 w-4" />
-                        </span>
-                      </div>
-
-                      <div className="mt-3 grid gap-2">
-                        {metrics.map((metric) => (
-                          <div key={metric.label} className="rounded-xl border border-white/10 bg-white/[0.06] p-2.5">
-                            <div className="flex items-center justify-between gap-2">
-                              <p className="text-base font-semibold text-white">{metric.value}</p>
-                              <span className="rounded-full bg-emerald-400/10 px-2 py-0.5 text-[0.65rem] font-semibold text-emerald-300">{metric.trend}</span>
-                            </div>
-                            <p className="mt-0.5 text-[0.7rem] text-slate-400">{metric.label}</p>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="mt-3 rounded-xl border border-white/10 bg-white/[0.05] p-2.5">
-                        <div className="flex items-end gap-1">
-                          {[38, 54, 42, 66, 58, 78, 71, 88].map((height, index) => (
-                            <div key={index} className="flex-1 rounded-t-sm bg-gradient-to-t from-blue-500 to-cyan-300" style={{ height: Math.round(height * 0.42) }} />
-                          ))}
-                        </div>
-                        <div className="mt-2 flex items-center justify-between text-[0.65rem] text-slate-400">
-                          <span>aprovacoes</span>
-                          <span>ultimas 8h</span>
-                        </div>
-                      </div>
-
-                      <div className="mt-2 space-y-1">
-                        {liveActivities.map((activity, index) => (
-                          <div key={activity.name} className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.05] px-2 py-1.5">
-                            <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[0.65rem] font-semibold text-white ${index === 0 ? "bg-blue-500" : index === 1 ? "bg-emerald-500" : "bg-slate-600"}`}>
-                              {activity.name.slice(0, 1)}
-                            </span>
-                            <div className="min-w-0 flex-1">
-                              <p className="truncate text-[0.7rem] text-slate-200">{activity.name} {activity.action}</p>
-                              <p className="text-[0.62rem] text-slate-500">{activity.time}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="bg-[radial-gradient(circle_at_80%_0%,rgba(34,197,94,0.18),transparent_34%),linear-gradient(145deg,#eff6ff,#ffffff_46%,#ecfdf5)] p-3">
-                      <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-[0_16px_40px_rgba(15,23,42,0.12)]">
-                        <div className="flex items-start justify-between gap-2">
-                          <div>
-                            <p className="text-xs font-semibold text-slate-950">Checkout ativo</p>
-                            <p className="mt-0.5 text-[0.65rem] text-slate-500">Loja integrada via Payle</p>
-                          </div>
-                          <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[0.65rem] font-semibold text-emerald-700">Seguro</span>
-                        </div>
-
-                        <div className="mt-3 space-y-1.5">
-                          {checkoutEvents.map(({ label, body, tone, Icon }) => {
-                            return (
-                              <div key={label} className={`rounded-xl border p-2 ${tone === "blue" ? "border-blue-200 bg-blue-50" : tone === "emerald" ? "border-emerald-200 bg-emerald-50" : "border-slate-200 bg-slate-50"}`}>
-                                <div className="flex items-start justify-between gap-2">
-                                  <div>
-                                    <p className={`text-xs font-semibold ${tone === "blue" ? "text-blue-900" : tone === "emerald" ? "text-emerald-900" : "text-slate-900"}`}>{label}</p>
-                                    <p className={`mt-0.5 text-[0.65rem] ${tone === "blue" ? "text-blue-700" : tone === "emerald" ? "text-emerald-700" : "text-slate-500"}`}>{body}</p>
-                                  </div>
-                                  <Icon className={tone === "emerald" ? "h-4 w-4 shrink-0 text-emerald-600" : "h-4 w-4 shrink-0 text-blue-600"} />
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
-
-                        <button className="mt-3 w-full rounded-full bg-blue-600 px-4 py-2 text-xs font-semibold text-white shadow-[0_12px_24px_rgba(37,99,235,0.22)]">
-                          Finalizar compra
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
 
         <section id="produto" className="relative border-b border-slate-200 bg-white payle-section-y">
           <div className="payle-container">
@@ -363,7 +161,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                 </h2>
               </motion.div>
               <motion.p variants={fadeUp} className="text-base leading-8 text-slate-600">
-                Pessoas vendem para pessoas. A Payle cuida da parte que costuma gerar duvida: checkout, status, eventos e entrega, para sua equipe trabalhar com mais calma.
+                Pessoas vendem para pessoas. A Payle cuida da parte que costuma gerar dúvida: checkout, status, eventos e entrega, para sua equipe trabalhar com mais calma.
               </motion.p>
             </motion.div>
 
@@ -374,9 +172,9 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
               </div>
               <div className="bg-[radial-gradient(circle_at_100%_0%,rgba(59,130,246,0.25),transparent_28%)] p-5 text-white sm:p-8">
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">Operação real</p>
-                <h3 className="mt-3 text-xl font-semibold sm:text-2xl">Uma manha mais tranquila para acompanhar vendas.</h3>
+                <h3 className="mt-3 text-xl font-semibold sm:text-2xl">Uma manhã mais tranquila para acompanhar vendas.</h3>
                 <p className="mt-4 leading-7 text-slate-300">
-                  Pedidos aprovados, carrinhos retomados e entregas liberadas aparecem como sinais simples. Ninguem precisa ficar perguntando em varios canais se a venda deu certo.
+                  Pedidos aprovados, carrinhos retomados e entregas liberadas aparecem como sinais simples. Ninguém precisa ficar perguntando em vários canais se a venda deu certo.
                 </p>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {["Pedido aprovado", "Cliente atualizado", "Entrega liberada", "Suporte com contexto"].map((item) => (
@@ -408,9 +206,9 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={ease} className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">Beneficios</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">Benefícios</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                Menos improviso no pagamento. Mais confianca na rotina.
+                Menos improviso no pagamento. Mais confiança na rotina.
               </h2>
               <p className="mt-4 leading-8 text-slate-600">
                 Cada detalhe foi pensado para reduzir atrito, mostrar status importantes e dar ao time uma leitura melhor do que acontece na venda.
@@ -444,14 +242,14 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                   O checkout vira uma conversa clara entre cliente, pagamento e equipe.
                 </h3>
                 <p className="mt-3 leading-7 text-slate-600">
-                  Em vez de telas soltas, a Payle mostra o que aconteceu e o que precisa de atencao. O time entende a venda sem depender de varias abas abertas.
+                  Em vez de telas soltas, a Payle mostra o que aconteceu e o que precisa de atenção. O time entende a venda sem depender de várias abas abertas.
                 </p>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {[
                     ["Pedido aprovado", "status claro para a equipe"],
                     ["Cliente atualizado", "menos chamados repetidos"],
                     ["Gateway conectado", "operação sem troca radical"],
-                    ["Entrega liberada", "fluxo finalizado com seguranca"]
+                    ["Entrega liberada", "fluxo finalizado com segurança"]
                   ].map(([label, body]) => (
                     <div key={label} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                       <IconCheck className="h-5 w-5 text-emerald-500" />
@@ -521,7 +319,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                       Existem pessoas acompanhando cada pedido.
                     </h2>
                     <p className="mt-3 max-w-xl text-sm leading-7 text-slate-200">
-                      Pedidos aprovados, carrinhos retomados e entregas liberadas aparecem como sinais simples. A equipe respira melhor quando sabe o que esta acontecendo.
+                      Pedidos aprovados, carrinhos retomados e entregas liberadas aparecem como sinais simples. A equipe respira melhor quando sabe o que está acontecendo.
                     </p>
                   </div>
                 </div>
@@ -628,7 +426,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                   Um ecossistema conectado ao redor do checkout.
                 </h2>
                 <p className="mt-4 leading-8 text-slate-600">
-                  Sua loja, gateways, ERP e entrega digital podem trabalhar no mesmo fluxo. A Payle organiza a experiencia para que o cliente pague e sua equipe acompanhe.
+                  Sua loja, gateways, ERP e entrega digital podem trabalhar no mesmo fluxo. A Payle organiza a experiência para que o cliente pague e sua equipe acompanhe.
                 </p>
               </motion.div>
 
@@ -668,10 +466,10 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={ease} className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">Checkout</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-                Do produto aprovado ate a entrega, cada etapa com status.
+                Do produto aprovado até a entrega, cada etapa com status.
               </h2>
               <p className="mt-4 leading-8 text-slate-300">
-                Uma jornada visual para o cliente e operacional para sua equipe: pedido, checkout, pagamento, aprovacao e entrega conectados.
+                Uma jornada visual para o cliente e operacional para sua equipe: pedido, checkout, pagamento, aprovação e entrega conectados.
               </p>
             </motion.div>
 
@@ -710,7 +508,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/20 bg-white/[0.14] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.24)] backdrop-blur-xl">
-                  <p className="text-sm font-semibold text-white">Seu cliente entende o pagamento sem esforco.</p>
+                  <p className="text-sm font-semibold text-white">Seu cliente entende o pagamento sem esforço.</p>
                   <p className="mt-1 text-xs text-slate-300">Uma tela clara no momento em que a compra acontece.</p>
                 </div>
               </div>
@@ -764,7 +562,7 @@ export function PayleLanding({ theme: _theme }: { theme: PayleThemeId }) {
               </p>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-7 text-slate-600">
-              Checkout moderno para e-commerces, infoprodutores e operacoes digitais que precisam vender com mais clareza.
+              Checkout moderno para e-commerces, infoprodutores e operações digitais que precisam vender com mais clareza.
             </p>
           </div>
 
