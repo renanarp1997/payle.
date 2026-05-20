@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
 import { ReactNode } from "react";
+import { Footer } from "@/components/layout/Footer";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -38,7 +39,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR" className={`${outfit.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased overflow-x-hidden">{children}</body>
+      <body className="flex min-h-screen flex-col font-sans antialiased overflow-x-hidden">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
